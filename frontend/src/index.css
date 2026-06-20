@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-black text-white font-sans;
+  }
+}
+
+@layer utilities {
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  .animate-eruption {
+    animation: eruption 4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  }
+  .animate-ken-burns {
+    animation: ken-burns 40s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes ken-burns {
+  0% { transform: scale(1.05) translate(0, 0); }
+  25% { transform: scale(1.1) translate(-2%, 1%); }
+  50% { transform: scale(1.15) translate(1%, -2%); }
+  75% { transform: scale(1.1) translate(2%, 2%); }
+  100% { transform: scale(1.05) translate(0, 0); }
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes rumble {
+  0% { transform: translate(-50%, -50%) scale(1.1) translate(0px, 0px); filter: blur(30px) sepia(1) hue-rotate(320deg) saturate(500%) brightness(0.6) contrast(1.5); }
+  25% { transform: translate(-50%, -50%) scale(1.11) translate(-2px, 2px); filter: blur(28px) sepia(1) hue-rotate(320deg) saturate(600%) brightness(0.7) contrast(1.6); }
+  50% { transform: translate(-50%, -50%) scale(1.1) translate(2px, -1px); filter: blur(32px) sepia(1) hue-rotate(310deg) saturate(400%) brightness(0.6) contrast(1.5); }
+  75% { transform: translate(-50%, -50%) scale(1.12) translate(-1px, -2px); filter: blur(29px) sepia(1) hue-rotate(330deg) saturate(550%) brightness(0.65) contrast(1.7); }
+  100% { transform: translate(-50%, -50%) scale(1.1) translate(0px, 0px); filter: blur(30px) sepia(1) hue-rotate(320deg) saturate(500%) brightness(0.6) contrast(1.5); }
+}
+
+@keyframes eruption {
+  0% { opacity: 0.9; transform: scale(1.2); }
+  10% { opacity: 1; transform: scale(1.1); }
+  40% { opacity: 0.6; transform: scale(1.05); }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-black/60 backdrop-blur-xl border border-white/20 shadow-2xl;
+  }
+  
+  .btn-primary {
+    @apply bg-white text-black font-semibold py-2 px-6 rounded-full hover:bg-gray-200 transition-colors duration-200 shadow-[0_0_15px_rgba(255,255,255,0.4)];
+  }
+  
+  .btn-secondary {
+    @apply bg-black/40 backdrop-blur-md border border-white/40 text-white font-semibold py-2 px-6 rounded-full hover:bg-white/20 transition-colors duration-200;
+  }
+  
+  .input-field {
+    @apply w-full bg-black/40 backdrop-blur-md border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all;
+  }
+  
+  .card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-xl rounded-2xl p-6 hover:bg-white/10 transition-all duration-300;
+  }
+}
