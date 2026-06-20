@@ -12,7 +12,7 @@ const PremiumBackground = () => {
       
       {/* Light frosted glass and dark gradient overlay for crisp text contrast */}
       <div className="fixed inset-0 z-[-2] bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none mix-blend-multiply" />
-      <div className="fixed inset-0 z-[-1] bg-black/60 backdrop-blur-[6px] pointer-events-none" />
+      <div className="fixed inset-0 z-[-1] bg-black/60 pointer-events-none" />
     </>
   );
 };
